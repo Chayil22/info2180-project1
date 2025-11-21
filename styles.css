@@ -4,66 +4,122 @@
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    color: #1a202c;
+    background-color: #ffffff;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 a {
     text-decoration: none;
 }
 
-/* ------------ Container -------------- */
 
 .container {
-    max-width: 960px;
     margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
     padding: 0 1rem;
 }
 
-/* ------------ Header Layout ------------ */
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
 
 header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 18px;
 }
 
 header nav ul {
     list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;               /* horizontal */
+    gap: 1.5rem;
 }
 
-/* ------------ Hero Section Layout ------------ */
+header nav a {
+    font-size: 18px;
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #5A67D8;              /* hover*/
+}
+
+/* ---------- HERO (OVERVIEW) ---------- */
 
 .overview-hero {
+    background-color: #E2E8F0;
     padding: 3rem 0;
 }
 
 .overview-hero .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
     align-items: center;
+    gap: 2rem;
 }
 
-/* ------------ Learn About Layout ------------ */
+.overview-hero-image,
+.overview-hero-text {
+    flex: 1 1 300px;
+}
+
+.overview-hero-text h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.overview-hero-text p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ---------- LEARN ABOUT SECTION ---------- */
 
 .learn-about {
     padding: 3rem 0;
 }
 
+.learn-about h2 {
+    font-size: 24px;
+    color: #48BB78;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
 .cards {
-    display: grid;
+    display: grid;                /* 3-column grid */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
+}
+
+.card {
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* slight shadow */
+    overflow: hidden;
+    background-color: #ffffff;
 }
 
 .card img {
@@ -72,51 +128,139 @@ header nav ul {
     object-fit: cover;
 }
 
-/* ------------ Testing Section Layout ------------ */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 21px;
+    color: #48BB78;
+}
+
+.card-body p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ---------- COVID-19 TESTING SECTION ---------- */
 
 .testing {
+    background-color: #4A5568;
+    color: #ffffff;
     padding: 3rem 0;
 }
 
 .testing .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
-/* ------------ Stories Layout ------------ */
+.testing-desciption {
+    flex: 1 1 280px;
+}
+
+.testing-desciption h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.testing-desciption p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cta {
+    flex: 0 0 auto;
+}
+
+/* Reusable button */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.testing .btn {
+    background-color: #48BB78;
+    color: #ffffff;
+}
+
+/* ---------- RECENT STORIES ---------- */
 
 .stories {
     padding: 3rem 0;
 }
 
+.stories h2 {
+    color: #5A67D8;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
 .stories article {
-    display: flex;
+    display: flex;               /* image left and text right */
     flex-wrap: wrap;
-    gap: 1.5rem;
     align-items: flex-start;
+    gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
 
 .stories article img {
     width: 140px;
     height: 140px;
+    border-radius: 50%;          /* circular images */
     object-fit: cover;
-    border-radius: 50%;
 }
 
-/* ------------ Newsletter Layout ------------ */
+.article-body h3 {
+    margin-top: 0;
+    font-size: 18px;             /* title size */
+    margin-bottom: 0.75rem;
+}
+
+.article-body p {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+.article-body a {
+    color: #5A67D8;              /* link color */
+    font-weight: 600;
+}
+
+/* ---------- NEWSLETTER ---------- */
 
 .newsletter {
+    background-color: #48BB78;
+    color: #ffffff;
     padding: 3rem 0;
-    text-align: center;
+    text-align: center;          /* contents centered */
+}
+
+.newsletter h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
 .newsletter form {
-    display: inline-flex;
+    display: inline-flex;        /* side by side input + button */
     flex-wrap: wrap;
+    align-items: stretch;
     gap: 0.5rem;
     justify-content: center;
 }
@@ -126,28 +270,56 @@ header nav ul {
 }
 
 .newsletter input[type="email"] {
-    padding: 0.75rem;
     width: 100%;
+    padding: 0.75rem 0.75rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
 }
 
 .newsletter .btn {
-    padding: 0.75rem 1.5rem;
+    background-color: #5A67D8;  /* Subscribe button */
+    color: #ffffff;
+    border-radius: 4px;
 }
 
-/* ------------ Footer Layout ------------ */
+/* Newsletter message styles */
+
+.message {
+    margin-top: 1rem;
+    min-height: 1.5em;
+    font-weight: 500;
+}
+
+.message.error {
+    color: #fed7d7; /* light red */
+}
+
+.message.success {
+    color: #e6fffa; /* light teal */
+}
+
+/* ---------- FOOTER ---------- */
 
 footer {
+    background-color: #4A5568;
+    color: #ffffff;
     padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
     text-align: center;
 }
 
-/* ------------ Responsive Layout ------------ */
+/* ---------- RESPONSIVE TWEAKS ---------- */
 
 @media (max-width: 600px) {
-
     header .container {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
     }
 
     .overview-hero .container {
